@@ -1,0 +1,17 @@
+[general]
+
+[INTERNO]
+;
+; RAMAL 100
+;
+exten => 100,1,Dial(SIP/100)
+;
+; RAMAL 200
+;
+exten => 200,1,Dial(SIP/200)
+;
+; RAMAL 300
+;
+exten => 300,1,Answer()
+same => 300,2,Playback(hello-world)
+same => 300,3,Hangup()

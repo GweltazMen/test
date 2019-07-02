@@ -1,0 +1,24 @@
+[general]
+allowguest=no
+srvlookup=no
+udpbindaddr=0.0.0.0
+tcpenable=no
+canreinvite = no
+dtmfmode=auto
+
+[ramal-voip](!)
+type=friend
+context=INTERNO
+host=dynamic
+disallow=all
+allow=ulaw
+allow=alaw
+allow=g729
+
+[100](ramal-voip)
+secret=senha100
+callerid="Vegeta" <100>
+
+[200](ramal-voip)
+secret=senha200
+callerid="Kakaroto" <200>
