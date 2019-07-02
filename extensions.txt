@@ -1,17 +1,21 @@
-[general]
+[general] 
 
 [INTERNO]
 ;
-; RAMAL 100
+;VOICEMAIL MENU
 ;
-exten => 100,1,Dial(SIP/100)
+exten => 500,1,VoiceMailMain()
+exten => 500,2,HangUp()
+exten => 500,3,PlayBack(vm-goodbye)
+exten => 500,4,HangUp() 
+
 ;
-; RAMAL 200
+; RAMAL 100 + VOICEMAIL  (FOR TEST ONLY)
+;
+exten => 100,1,Dial(SIP/100,5)
+exten => 100,2,VoiceMail(100) 
+
+;
+; RAMAL 200 (FOR TEST ONLY)
 ;
 exten => 200,1,Dial(SIP/200)
-;
-; RAMAL 300
-;
-exten => 300,1,Answer()
-same => 300,2,Playback(hello-world)
-same => 300,3,Hangup()
